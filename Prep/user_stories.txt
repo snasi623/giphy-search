@@ -1,3 +1,3 @@
-As a < type of user >, I want < some goal > so that < some reason >.
+As a commuter, I want a website that expresses the weather with gifs, so that I can have a fun visual of current conditions.
 
-As a < type of user >, I want < some goal > so that < some reason >.
+As a commuter, I want < some goal > so that < some reason >.
