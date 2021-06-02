@@ -1,0 +1,18 @@
+body {
+    background: linear-gradient(blue,aqua)
+}
+.col-10 > header {
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    color: white;
+}
+.sidebar > div > img {
+    width: 60%;
+    height: auto;
+}
+.sidebar > div {
+    padding-bottom: 50px;
+    padding-left: 30px;
+    padding-top: 50px;
+}

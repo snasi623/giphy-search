@@ -7,10 +7,27 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="text" id="searchQuery" placeholder="Search" />
-    <button id="searchButton">Submit</button>
-    <br>
-    <div id="image-area"></div>
-    <script src="./Javascript/script.js"></script>
+    <div class="row">
+        <div class="col-sm-1 sidebar">
+            <div class="row"><img src="./images/sunny.png" alt="Sunny" /></div>
+            <div class="row"><img src="./images/clouds.png" alt="Cloudy" /></div>
+            <div class="row"><img src="./images/thunderstorm.png" alt="Thunderstorm" /></div>
+            <div class="row"><img src="./images/tornado.png" alt="Tornado" /></div>
+        </div>
+        <div class="col-10">
+            <header><h1>Weather Gif</h1></header>
+            <input type="text" id="searchQuery" placeholder="Search" />
+            <button id="searchButton">Submit</button>
+            <br>
+            <div id="image-area"></div>
+            <script src="./Javascript/script.js"></script>
+        </div>
+        <div class="col-sm-1 sidebar">
+            <div class="row"><img src="./images/sun-cloud.png" alt="Overcast" /></div>
+            <div class="row"><img src="./images/snowy.png" alt="Snowy" /></div>
+            <div class="row"><img src="./images/rainy.png" alt="Rainy" /></div>
+            <div class="row"><img src="./images/rainbow.png" alt="Rainbow" /></div>
+        </div>
+    </div>
 </body>
 </html>

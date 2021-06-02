@@ -22,7 +22,6 @@ function getgifs(conditions) {
   })
 }
 
-console.log("hello")
 var weatherAPI = "https://api.openweathermap.org/data/2.5/weather?";
 
 // On submit
@@ -36,10 +35,10 @@ $("#searchButton").click(function(e) {
     url: weatherAPI + $.param(params),
     method: "GET",
     // When data (weatherData) received, do something
-    success: function(weatherData) {
-      console.log(weatherData)
+    success: function(weatherAPI) {
+      console.log(weatherAPI)
 
-      getgifs(weatherData.weather[0].description)
+      getgifs(weatherAPI.weather[0].description)
     }
   })
 })
