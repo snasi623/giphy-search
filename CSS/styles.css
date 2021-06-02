@@ -1,11 +1,16 @@
 body {
     background: linear-gradient(blue,aqua)
 }
-.col-10 > header {
+h1 {
     text-align: center;
-    padding-top: 60px;
+    padding-top: 90px;
     padding-bottom: 60px;
     color: white;
+}
+#goldenIcon {
+    width: 20%;
+    height: auto;
+    display: inline;
 }
 .sidebar > div > img {
     width: 60%;
@@ -15,4 +20,7 @@ body {
     padding-bottom: 50px;
     padding-left: 30px;
     padding-top: 50px;
+}
+#searchBar {
+    align-items: center;
 }
