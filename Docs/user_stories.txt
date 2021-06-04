@@ -1,0 +1,6 @@
+As a commuter, I want a website that expresses the weather with gifs, so that I can have a fun visual of current conditions.
+As a commuter, I want an app that simplifies the weather conditions so that I can decide if I need a jacket in the morning.
+
+To Do List:
+-Read Me
+-Git ignore

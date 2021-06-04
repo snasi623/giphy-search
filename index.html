@@ -4,33 +4,96 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./CSS/styles.css"></link>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Document</title>
 </head>
 <body>
-    <header><h1>Weather Gif</h1></header>
-    <div class="row">
-        <div class="col-sm-1 sidebar">
-            <div class="row"><img src="./images/sunny.png" alt="Sunny" /></div>
-            <div class="row"><img src="./images/clouds.png" alt="Cloudy" /></div>
-            <div class="row"><img src="./images/thunderstorm.png" alt="Thunderstorm" /></div>
-            <div class="row"><img src="./images/tornado.png" alt="Tornado" /></div>
-        </div>
-        <div class="col-sm-10" id="searchBar">
-            <div class="row">
+    <header><h1>US Weather GIF</h1></header>
+    <div id="searchBar" class="container">
+        <div class="row" id="searchRow">
+            <div id="input" class="col-md-6">
                 <img src="./images/golden-icon.png" alt="Main Icon" id="goldenIcon">
-                <input type="text" id="searchQuery" placeholder="Search" />
-                <button id="searchButton">Submit</button>
+                <input type="text" id="cityQuery" placeholder="City Name" />
+                <select id="stateSelect">
+                    <option value="AL">AL</option>
+                    <option value="AK">AK</option>
+                    <option value="AZ">AZ</option>
+                    <option value="AR">AR</option>
+                    <option value="CA">CA</option>
+                    <option value="CO">CO</option>
+                    <option value="CT">CT</option>
+                    <option value="DE">DE</option>
+                    <option value="DC">DC</option>
+                    <option value="FL">FL</option>
+                    <option value="GA">GA</option>
+                    <option value="HI">HI</option>
+                    <option value="ID">ID</option>
+                    <option value="IL">IL</option>
+                    <option value="IN">IN</option>
+                    <option value="IA">IA</option>
+                    <option value="KS">KS</option>
+                    <option value="KY">KY</option>
+                    <option value="LA">LA</option>
+                    <option value="ME">ME</option>
+                    <option value="MD">MD</option>
+                    <option value="MA">MA</option>
+                    <option value="MI">MI</option>
+                    <option value="MN">MN</option>
+                    <option value="MS">MS</option>
+                    <option value="MO">MO</option>
+                    <option value="MT">MT</option>
+                    <option value="NE">NE</option>
+                    <option value="NV">NV</option>
+                    <option value="NH">NH</option>
+                    <option value="NJ">NJ</option>
+                    <option value="NM">NM</option>
+                    <option value="NY">NY</option>
+                    <option value="NC">NC</option>
+                    <option value="ND">ND</option>
+                    <option value="OH">OH</option>
+                    <option value="OK">OK</option>
+                    <option value="OR">OR</option>
+                    <option value="PA">PA</option>
+                    <option value="RI">RI</option>
+                    <option value="SC">SC</option>
+                    <option value="SD">SD</option>
+                    <option value="TN">TN</option>
+                    <option value="TX">TX</option>
+                    <option value="UT">UT</option>
+                    <option value="VT">VT</option>
+                    <option value="VA">VA</option>
+                    <option value="WA">WA</option>
+                    <option value="WV">WV</option>
+                    <option value="WI">WI</option>
+                    <option value="WY">WY</option>
+                </select>
+                <button id="searchButton">Go</button>
+                <div id="errorMessage">
+                    Could not locate city in state. Please try again.
+                </div>
             </div>
-            <br>
-            <div id="image-area"></div>
-            <script src="./Javascript/script.js"></script>
+            <div class="col-md-6" id="output">
+                <div class="card text-center">
+                    <div class="card-header">Current Conditions</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Search for local weather as told by GIFs</h5>    
+                        <p class="card-text">
+                            <span id="cityState">City, State</span>
+                            <br>
+                            <span id="temperature">Temperature</span>
+                        </p>
+                    </div>
+                </div>
+                <!-- Search by "City, State" to get current weather conditions in the form of GIFs. 
+                <br>
+                <h2 id="cityState">City, State</h2>
+                <br>
+                <h3 id="temperature">Temperature</h3> -->
+            </div>
         </div>
-        <div class="col-sm-1 sidebar">
-            <div class="row"><img src="./images/sun-cloud.png" alt="Overcast" /></div>
-            <div class="row"><img src="./images/snowy.png" alt="Snowy" /></div>
-            <div class="row"><img src="./images/rainy.png" alt="Rainy" /></div>
-            <div class="row"><img src="./images/rainbow.png" alt="Rainbow" /></div>
-        </div>
+        <br>
+        <div class="row align-items-center" id="image-area"></div>
     </div>
+    <script src="./Javascript/script.js"></script>
 </body>
 </html>

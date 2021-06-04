@@ -1,26 +1,54 @@
 body {
-    background: linear-gradient(blue,aqua)
+    background: rgb(173, 192, 218);
 }
 h1 {
     text-align: center;
     padding-top: 90px;
     padding-bottom: 60px;
     color: white;
+    text-shadow: 2px 2px black;
+}
+header {
+    background-image: url('../images/weather-banner.jpeg');
+    background-size: cover;
 }
 #goldenIcon {
     width: 20%;
     height: auto;
+}
+div#searchBar.col-10 {
     display: inline;
 }
-.sidebar > div > img {
-    width: 60%;
+#output {
+    padding-left: 20px;
+    align-self: center;
+    text-align: center;
+}
+#input {
+    padding-left: 20px;
+    align-self: center;
+}
+h2 {
+    padding-top: 30px;
+}
+#searchRow > div {
+    padding: 5px;
+}
+@media screen and (max-width: 768px) {
+    .weatherGif {
+        height: 64px;
+        width: auto;
+    }
+}
+#errorMessage {
+    color: red;
+    display: none;
+}
+.weatherGif {
     height: auto;
-}
-.sidebar > div {
-    padding-bottom: 50px;
-    padding-left: 30px;
-    padding-top: 50px;
-}
-#searchBar {
-    align-items: center;
+    width: 176px;
+    margin: 15px;
+    background-color: white;
+    max-height: 196px;
+    border: 1px solid black;
 }

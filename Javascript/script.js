@@ -1,44 +1,53 @@
-function getgifs(conditions) {
-  var giphyAPI = "https://api.giphy.com/v1/gifs/search?";
+function getGifs(conditions) {
+  var giphyAPI = 'https://api.giphy.com/v1/gifs/search?';
   var params = {
     q: conditions,
-    limit: 3,
-    api_key: "EvIg8byxwnFjWckyukqSCi9jR8dV5aZ8",
-    fmt: "json"
+    limit: 6,
+    api_key: 'EvIg8byxwnFjWckyukqSCi9jR8dV5aZ8',
+    fmt: 'json'
   };
-  $("#image-area").empty()
-  // Call giphy
+
+  $('#image-area').empty();
+
   $.ajax({
     url: giphyAPI + $.param(params),
-    method: "GET",
-    // When data (r) received, show the gifs
+    method: 'GET',
     success: function(r) {
-      console.log(r)
+      console.log(r);
+
       for (var i = 0; i < r.data.length; i++) {
-          var imgURL = r.data[i].images.preview_gif.url;
-          $("#image-area").append('<img src="' + imgURL +'" />')
+          var imgURL = r.data[i].images.downsized_large.url;
+          $('#image-area').append('<div class="col-sm-4 text-center"><img class="weatherGif" src="' + imgURL +'" /></div>');
       }
     }
   })
 }
 
-var weatherAPI = "https://api.openweathermap.org/data/2.5/weather?";
-
-// On submit
-$("#searchButton").click(function(e) {
-  var query = $('#searchQuery').val();
+var weatherAPI = 'https://api.openweathermap.org/data/2.5/weather?';
+$('#searchButton').click(function(e) {
+  var query = $('#cityQuery').val() + ', ' + $('#stateSelect').val() + ', US';
   var params = {
     q: query,
-    appid: "1b36a74db69e6f86487bf2188ce39962",
+    appid: '1b36a74db69e6f86487bf2188ce39962',
   }
+
   $.ajax({
     url: weatherAPI + $.param(params),
-    method: "GET",
-    // When data (weatherData) received, do something
+    method: 'GET',
     success: function(weatherAPI) {
-      console.log(weatherAPI)
+      console.log(weatherAPI);
+      $('#errorMessage').hide();
 
-      getgifs(weatherAPI.weather[0].description)
+      var location = (weatherAPI.name) + ', ' + $('#stateSelect').val();
+      $("#cityState").text(location);
+
+      var tempF = (weatherAPI.main.temp - 273.15) * 9/5 + 32;
+      $('#temperature').html(Math.round(tempF) + '&deg;F');
+
+      getGifs(weatherAPI.weather[0].description);
+    },
+    error: function(e) {
+      $('#errorMessage').show();
     }
   })
 })
