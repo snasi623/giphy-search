@@ -5,16 +5,16 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./CSS/styles.css"></link>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Document</title>
+    <title>US Weather GIF</title>
 </head>
 <body>
     <header><h1>US Weather GIF</h1></header>
     <div id="searchBar" class="container">
         <div class="row" id="searchRow">
-            <div id="input" class="col-md-6">
+            <div id="input" class="col-md-6 form-inline">
                 <img src="./images/golden-icon.png" alt="Main Icon" id="goldenIcon">
-                <input type="text" id="cityQuery" placeholder="City Name" />
-                <select id="stateSelect">
+                <input type="text" id="cityQuery" placeholder="City Name" class="form-control" />
+                <select id="stateSelect" class="form-control">
                     <option value="AL">AL</option>
                     <option value="AK">AK</option>
                     <option value="AZ">AZ</option>
@@ -67,7 +67,7 @@
                     <option value="WI">WI</option>
                     <option value="WY">WY</option>
                 </select>
-                <button id="searchButton">Go</button>
+                <button id="searchButton" class="btn btn-secondary">Go</button>
                 <div id="errorMessage">
                     Could not locate city in state. Please try again.
                 </div>
