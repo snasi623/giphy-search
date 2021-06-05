@@ -24,7 +24,8 @@ function getGifs(conditions) {
 }
 
 var weatherAPI = 'https://api.openweathermap.org/data/2.5/weather?';
-$('#searchButton').click(function(e) {
+$('#searchForm').submit(function(e) {
+  e.preventDefault();
   var query = $('#cityQuery').val() + ', ' + $('#stateSelect').val() + ', US';
   var params = {
     q: query,
